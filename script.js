@@ -10,11 +10,7 @@ const errorElement = document.getElementById('error-element');
 
 
 
-
-
-
 let markRead = 0;
-
 
 
 // Load All Posts
@@ -32,7 +28,7 @@ const loadAllPosts = async () => {
         else {
             active = `<img class="absolute top-2 right-3" src="images/icons/Status (1).png" alt="">`
         }
-        // console.log(post);
+      
         const div = document.createElement('div');
         div.innerHTML = `
         <!-- card 1 -->
@@ -103,7 +99,6 @@ const displayTitleView = (title, view) => {
 
 
 // load Latest post
-
 const loadLatestPost = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
     const data = await res.json();
@@ -146,10 +141,8 @@ const loadLatestPost = async () => {
 const handleSearch = async () => {
     const inputField = document.getElementById('input-field');
     const search = inputField.value;
-    // postContainer.innerHTML = '';
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${search}`);
     const data = await res.json();
-  
    
     postContainer.innerHTML= '';
     if(data.posts.length === 0){
@@ -238,8 +231,6 @@ const handleSearch = async () => {
   
 
 }
-
-
 
 
 loadAllPosts();
