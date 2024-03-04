@@ -195,7 +195,7 @@ const handleSearch = async () => {
                                 src="images/icons/tabler-icon-clock-hour-9.png" alt=""> <span> ${post.posted_time}</span> min</p>
                     </div>
                     <div>
-                        <button onclick=" displayTitleView('${post.title}','${post.view_count}')"> <img src="images/icons/Group 40106.png" alt=""></button>
+                        <button onclick=" displayTitleView('${post.title.replace(/'/g, '')}','${post.view_count}')"> <img src="images/icons/Group 40106.png" alt=""></button>
                     </div>
                 </div>
 
